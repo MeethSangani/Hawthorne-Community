@@ -1,0 +1,273 @@
+/* blockwatch.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+
+:root {
+    --primary-color: #204e4a;
+    --accent-color: #e67e22;
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: #f0f7f4;
+    line-height: 1.6;
+}
+
+header {
+    background: #204e4a;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-family: var(--heading-font);
+    color: white;
+    font-size: 1.8rem;
+}
+header h2 {
+    font-family: var(--heading-font);
+    color: white;
+    font-size: 1rem;
+}
+.header-titles {
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Hamburger menu button - hidden by default on larger screens */
+.hamburger-menu {
+    display: none; /* Hide on desktop */
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000;
+}
+
+footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+
+main {
+    padding: 30px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease;
+    /* Adjust this padding-top for desktop as well if needed to prevent overlap */
+    padding-top: 100px; /* A safe default for desktop to push content below fixed header */
+}
+
+h2 {
+    font-size: 2rem;
+    color: #204e4a;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+section {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+    animation: slideUp 0.8s ease;
+}
+
+section h3 {
+    font-size: 1.5rem;
+    color: #204e4a;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 1rem;
+}
+
+.blockwatch-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.blockwatch-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.blockwatch-list li span:first-child {
+    flex-shrink: 0;
+}
+
+
+.contact-info {
+    margin-top: 30px;
+    background-color: #f0f4f3;
+    padding: 20px;
+    border-left: 4px solid #204e4a;
+    border-radius: 8px;
+    font-size: 1rem;
+    animation: fadeIn 1.2s ease;
+}
+
+.contact-info strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #204e4a;
+}
+
+a {
+    color: #204e4a;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #157f76;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* --- Responsive Design --- */
+
+/* For screens smaller than 768px (common breakpoint for tablets/phones) */
+@media (max-width: 767px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    #main-nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: var(--primary-color);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    #main-nav.active {
+        display: flex;
+    }
+
+    #main-nav a {
+        margin: 0.5rem 2rem;
+        text-align: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #main-nav a:last-child {
+        border-bottom: none;
+    }
+
+    main {
+        /* This is the key adjustment for mobile */
+        padding-top: 8rem !important; /* Increased padding and added !important */
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .header-titles {
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+    header h2 {
+        font-size: 0.9rem;
+    }
+
+    h2.text-4xl {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    section {
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    section h3 {
+        font-size: 1.3rem;
+    }
+
+    .blockwatch-list li {
+        font-size: 0.95rem;
+        margin-bottom: 8px;
+    }
+
+    .contact-info {
+        margin-top: 20px;
+        padding: 15px;
+    }
+
+    footer {
+        margin-top: 2rem;
+    }
+}
