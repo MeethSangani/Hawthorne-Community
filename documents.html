@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HOA Documents - Hawthorne Station</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="documents.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans bg-gradient-to-tr from-gray-100 to-[#e0f2f1] min-h-screen">
+
+  <header class="bg-teal-900 text-white p-4 shadow-md">
+    <div class="header-titles px-6">
+      <h1 class="text-3xl font-display font-bold">Hawthorne Station</h1>
+      <h2 class="text-xl font-light">Homeowner’s Association</h2>
+    </div>
+    <button class="hamburger-menu" id="hamburger-button" aria-label="Open navigation menu">
+      &#9776; </button>
+    <nav id="main-nav">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="communication.html" class="hover:underline">HOA Communication</a>
+      <a href="community.html" class="hover:underline">Community Details</a>
+      <a href="blockwatch.html" class="hover:underline">Blockwatch</a>
+      <a href="documents.html" class="font-semibold underline">HOA Documents</a>
+      <a href="faq.html" class="hover:underline">FAQ</a>
+    </nav>
+  </header>
+
+
+  <main class="max-w-7xl mx-auto px-8 py-12 mt-20 animate-fadeIn">
+    <h2 class="text-5xl text-center font-display text-[#204e4a] mb-12 documents-heading">HOA Documents</h2>
+
+    <section class="bg-white rounded-3xl shadow-2xl p-10 grid md:grid-cols-2 gap-10 animate-slideUp mb-16">
+      <div class="space-y-6">
+        <h3 class="text-2xl font-semibold text-[#204e4a]">Governing Documents Overview</h3>
+        <p class="text-gray-700 leading-relaxed">
+          The Association’s economic well‐being relies on the timely payment of assessments and other allowable charges. As it is the Board's responsibility, as defined in the By‐Laws of the Association and the Declarations, to use its best efforts to collect funds owed to the Association, the listed policies and procedures have been adopted by the Board of Directors of the Hawthorne Station Homeowners’ Association.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <h3 class="text-2xl font-semibold text-[#204e4a]">Rules & Regulations</h3>
+        <p class="text-gray-700 leading-relaxed">
+          These Rules and Regulations have been established in the best interest of the Association as a whole. They are enforced by the Board of Directors or its designated agents in a fair and consistent manner. These rules apply to every Lot Owner and their family, guests, invitees, and licensees, ensuring a peaceful and orderly community.
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-2xl p-8 shadow-xl animate-fadeIn">
+      <div class="flex justify-center gap-6 mb-6 tab-buttons-container"> <button onclick="showTab('governing')" class="tab-btn active-tab">Governing Documents</button>
+        <button onclick="showTab('minutes')" class="tab-btn">Minutes</button>
+        <button onclick="showTab('newsletters')" class="tab-btn">Newsletters</button>
+      </div>
+
+      <div id="governing" class="tab-content">
+        <ul class="grid md:grid-cols-2 gap-4">
+          <li><a href="pdfs/bylaws.pdf" class="doc-link" target="_blank">Bylaws</a></li>
+          <li><a href="pdfs/ccrs.pdf" class="doc-link" target="_blank">Declarations of CC&R's</a></li>
+          <li><a href="pdfs/LotMaintenance.pdf" class="doc-link" target="_blank">Lot Maintenance Requirements & Enforcement</a></li>
+          <li><a href="pdfs/AssessmentCollectionsPolicy.pdf" class="doc-link" target="_blank">Assessment Payment & Collection Policy</a></li>
+          <li><a href="pdfs/ArchitecturalReviewForm.pdf" class="doc-link" target="_blank">Architecture Request Form</a></li>
+          <li><a href="pdfs/ArtificialTurfGuidelines.pdf" class="doc-link" target="_blank">Artificial Turf Guideline</a></li>
+        </ul>
+      </div>
+
+      <div id="minutes" class="tab-content hidden">
+        <ul class="grid md:grid-cols-2 gap-4">
+          <li><a href="pdfs/20130515MeetingMinutesHOABoard.pdf" class="doc-link" target="_blank">May 15, 2013</a></li>
+          <li><a href="pdfs/20121112MeetingMinutesHOABoard.pdf" class="doc-link" target="_blank">November 12, 2012</a></li>
+          <li><a href="pdfs/20130727AnnualMeetingMinutes.pdf" class="doc-link" target="_blank">July 27, 2013</a></li>
+        </ul>
+      </div>
+
+      <div id="newsletters" class="tab-content hidden">
+        <ul class="grid md:grid-cols-2 gap-4">
+          <li><a href="pdfs/201211HOANewsletter.pdf" class="doc-link" target="_blank">Current: November, 2012 Newsletter</a></li>
+          <li><a href="pdfs/201204_HOANewsletter.pdf" class="doc-link" target="_blank">April, 2012</a></li>
+          <li><a href="pdfs/201106_HOANewsletter.pdf" class="doc-link" target="_blank">June, 2011</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+    <footer>
+    &copy; 2025 Hawthorne Station. All rights reserved.
+  </footer>
+  <script>
+    function showTab(tab) {
+      const tabs = ['governing', 'minutes', 'newsletters'];
+      tabs.forEach(id => {
+        document.getElementById(id).classList.add('hidden');
+      });
+      document.getElementById(tab).classList.remove('hidden');
+
+      const buttons = document.querySelectorAll('.tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active-tab'));
+      // Use event.currentTarget instead of event.target for the button
+      // as event.target might be a child element within the button
+      event.currentTarget.classList.add('active-tab');
+    }
+
+    // JavaScript for mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerButton = document.getElementById('hamburger-button');
+      const mainNav = document.getElementById('main-nav');
+
+      hamburgerButton.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+      });
+
+      // Initialize the first tab on load
+      showTab('governing'); // Call directly to set initial active state
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --primary-color: #204e4a;
+    --accent-color: #e67e22;
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --heading-font: 'Playfair Display', serif;
+    --body-font: 'Open Sans', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: var(--body-font);
+    color: var(--text-color);
+    background-color: #f0f7f4;
+    line-height: 1.6;
+}
+
+header {
+    background: #204e4a;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between; /* Space out titles and nav/hamburger */
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-family: var(--heading-font);
+    color: white;
+    font-size: 1.8rem;
+}
+header h2 {
+    font-family: var(--heading-font);
+    color: white;
+    font-size: 1rem;
+}
+.header-titles {
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Hamburger menu button - hidden by default on larger screens */
+.hamburger-menu {
+    display: none; /* Hide on desktop */
+    font-size: 2rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+footer {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* --- Responsive Design --- */
+
+/* For screens smaller than 768px (common breakpoint for tablets/phones) */
+@media (max-width: 767px) {
+    header {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: space-between; /* Space out title and hamburger */
+        padding: 1rem; /* Adjust padding for small screens */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    /* Hide the navigation links by default on small screens */
+    #main-nav {
+        display: none;
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Take full width */
+        background: var(--primary-color); /* Background for dropdown */
+        position: absolute;
+        top: 100%; /* Position below the header */
+        left: 0;
+        padding: 1rem 0;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    /* Show navigation when the 'active' class is added by JavaScript */
+    #main-nav.active {
+        display: flex;
+    }
+
+    #main-nav a {
+        margin: 0.5rem 2rem; /* Adjust padding for dropdown links */
+        text-align: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separator */
+    }
+
+    #main-nav a:last-child {
+        border-bottom: none; /* No separator for the last link */
+    }
+
+    main { /* Changed from .main to main to target the actual main tag */
+        padding-top: 6rem; /* Adjust main content padding to account for fixed header */
+        padding: 1rem; /* Adjust general padding */
+    }
+
+    .header-titles {
+        align-items: flex-start; /* Align titles to the start */
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Slightly smaller font for mobile */
+    }
+    header h2 {
+        font-size: 0.9rem; /* Slightly smaller font for mobile */
+    }
+
+    /* Target the new custom class for the main heading */
+    .community-heading {
+        margin-left: 0 !important; /* Remove left margin on small screens and override Tailwind */
+        text-align: center; /* Center align heading */
+        font-size: 2rem; /* Adjust heading size for mobile */
+    }
+
+    .max-w-5xl {
+        max-width: 100%; /* Allow cards to take full width */
+        margin: 1rem auto; /* Adjust card margin */
+    }
+
+    /* Specific selector to target the first image (totlot.jpg) */
+    .max-w-5xl.mx-auto.bg-white.shadow-lg.rounded-lg.overflow-hidden.transition-transform.duration-500.hover\:scale-\[1\.01\].mb-10 img {
+        height: 200px; /* Adjust image height for smaller screens */
+    }
+
+    .carousel-item img {
+        height: 250px; /* Adjust carousel image height for smaller screens */
+    }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hawthorne Station - Blockwatch</title>
+  <link rel="stylesheet" href="community.css" /> <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <header class="bg-teal-900 text-white p-4">
+    <div class="header-titles px-6">
+      <h1 class="text-3xl font-display font-bold">Hawthorne Station</h1>
+      <h2 class="text-xl font-light">Homeowner’s Association</h2>
+    </div>
+    <button class="hamburger-menu" id="hamburger-button" aria-label="Open navigation menu">
+      &#9776; </button>
+    <nav id="main-nav">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="communication.html" class="hover:underline">HOA Communication</a>
+      <a href="community.html" class="hover:underline">Community Details</a>
+      <a href="blockwatch.html">Blockwatch</a>
+      <a href="documents.html" class="hover:underline">HOA Documents</a>
+      <a href="faq.html" class="hover:underline">FAQ</a>
+    </nav>
+  </header>
+
+  <main class="px-6 py-10 max-w-5xl mx-auto mt-20">
+    <h2 class="text-4xl font-display text-[#204e4a] mb-8 text-center font-bold animate-fadeIn">
+      Blockwatch
+    </h2>
+
+    <section class="bg-white p-6 rounded-2xl shadow-lg transition hover:shadow-xl duration-300 animate-fadeIn">
+      <p class="mb-6">Hawthorne Station participates in Snohomish County’s Neighborhood Watch program. As homeowners we are all responsible for reporting any suspicious activity immediately to the proper local authorities such as the police or fire department...</p>
+
+      <h3 class="text-2xl font-semibold text-[#204e4a] mb-3">Please participate in neighborhood watch by:</h3>
+
+      <ul class="space-y-3 list-inside list-none blockwatch-list"> <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Knowing who your neighbors are.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Introduce yourself to passersby as they're walking down your street.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Take note of cars that might be driving slowly down your street.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Call your neighbor to let them know they left their garage door open.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Lock your car doors and the doors to your house.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Remove packages from your cars so they don't become bait for a thief.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Keep outside lights on at night.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Be aware of what belongs & what doesn't.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Keep an eye on your neighbor’s yards & houses.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Get your teenagers involved in neighborhood watch too. This is their neighborhood too.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Let your block captain or your next-door neighbor know when you're going on vacation.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-[#204e4a] text-xl">✓
+          </span>
+          <span>Stop your newspapers while you're away.</span>
+        </li>
+      </ul>
+
+      <p class="mt-6">These are just a few tips for helping make Neighborhood Watch work well. By participating and getting involved, we'll be able to keep Hawthorne Station a safe place to live.</p>
+
+      <div class="mt-8 contact-info"> <h4 class="text-xl font-semibold text-[#204e4a]">Contact:</h4>
+        <p>Rushabh Gandhi<br/>
+        Neighborhood Watch Captain<br/>
+        <a href="mailto:blockwatch@hawthornestation.com" class="text-blue-600 underline hover:text-blue-800">blockwatch@hawthornestation.com</a><br/>
+        <a href="tel:3153785950" class="text-blue-600 underline hover:text-blue-800">315 378 5950</a></p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Hawthorne Station. All rights reserved.
+  </footer>
+<script>
+  // JavaScript for mobile menu toggle
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const mainNav = document.getElementById('main-nav');
+
+    hamburgerButton.addEventListener('click', function() {
+      mainNav.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>

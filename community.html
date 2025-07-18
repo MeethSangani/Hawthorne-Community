@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hawthorne Station - Community</title>
+  <link rel="stylesheet" href="community.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <header class="bg-teal-900 text-white p-4">
+    <div class="header-titles px-6">
+      <h1 class="text-3xl font-display font-bold">Hawthorne Station</h1>
+      <h2 class="text-xl font-light">Homeowner’s Association</h2>
+    </div>
+    <button class="hamburger-menu" id="hamburger-button" aria-label="Open navigation menu">
+      &#9776; </button>
+    <nav id="main-nav">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="communication.html" class="hover:underline">HOA Communication</a>
+      <a href="community.html">Community Details</a>
+      <a href="blockwatch.html" class="hover:underline">Blockwatch</a>
+      <a href="documents.html" class="hover:underline">HOA Documents</a>
+      <a href="faq.html" class="hover:underline">FAQ</a>
+    </nav>
+  </header>
+
+  <main class="p-6 mt-20">
+    <h2 class="text-3xl font-bold text-[#204e4a] font-display mb-6 ml-5 community-heading">Community details and Events</h2>
+
+    <div class="max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-500 hover:scale-[1.01] mb-10">
+      <img src="images/totlot.jpg" alt="Community Image" class="w-full h-[300px] object-cover" />
+
+      <div class="p-6">
+        <p class="text-gray-700 text-lg leading-relaxed">
+          Our community was built by three local builders; Almark Homes, Contempra Homes, and Woodhaven Homes. They each have their own beautiful and unique qualities yet ensure a cohesive style to the neighborhood. The homes were built in 2005 to 2006 and range from ~2481 to 3275 square feet.
+        </p>
+        <p class="text-gray-700 text-lg leading-relaxed mt-4">
+          We share a lovely Park which includes a Tot Lot for children and a Basketball Court. On sunny days it is a fantastic place to enjoy the playground equipment, play ball, or take your dog for a walk.
+        </p>
+        <p class="text-gray-700 text-lg leading-relaxed mt-4">
+          We are within walking distance of Skyview Jr High and the amenities it provides; tennis courts, track and baseball field.
+        </p>
+      </div>
+    </div>
+    <div class="max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden p-6 mt-10">
+      <h3 class="text-2xl font-bold text-[#204e4a] font-display mb-6">Community Gallery</h3>
+      <div class="relative w-full overflow-hidden">
+        <div class="carousel-inner relative w-full flex transition-transform duration-700 ease-in-out" id="carousel-inner">
+          <div class="carousel-item w-full flex-shrink-0">
+            <img src="images/houses.jpeg" class="w-full h-[400px] object-cover rounded-lg" alt="Community Image 1">
+          </div>
+          <div class="carousel-item w-full flex-shrink-0">
+            <img src="images/street.jpeg" class="w-full h-[400px] object-cover rounded-lg" alt="Community Image 2">
+          </div>
+          <div class="carousel-item w-full flex-shrink-0">
+            <img src="images/letterbox.jpeg" class="w-full h-[400px] object-cover rounded-lg" alt="Community Image 3">
+          </div>
+          <div class="carousel-item w-full flex-shrink-0">
+            <img src="images/park.jpeg" class="w-full h-[400px] object-cover rounded-lg" alt="Community Image 4">
+          </div>
+          <div class="carousel-item w-full flex-shrink-0">
+            <img src="images/basketball.jpeg" class="w-full h-[400px] object-cover rounded-lg" alt="Community Image 5">
+          </div>
+        </div>
+
+        <div class="carousel-indicators absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <button class="indicator-btn w-3 h-3 bg-gray-400 rounded-full active" data-slide-to="0"></button>
+          <button class="indicator-btn w-3 h-3 bg-gray-400 rounded-full" data-slide-to="1"></button>
+          <button class="indicator-btn w-3 h-3 bg-gray-400 rounded-full" data-slide-to="2"></button>
+          <button class="indicator-btn w-3 h-3 bg-gray-400 rounded-full" data-slide-to="3"></button>
+          <button class="indicator-btn w-3 h-3 bg-gray-400 rounded-full" data-slide-to="4"></button>
+        </div>
+
+        <button class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full opacity-75 hover:opacity-100" id="prevBtn">
+          &#10094;
+        </button>
+        <button class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full opacity-75 hover:opacity-100" id="nextBtn">
+          &#10095;
+        </button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Hawthorne Station. All rights reserved.
+  </footer>
+  <script>
+    // JavaScript for mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburgerButton = document.getElementById('hamburger-button');
+      const mainNav = document.getElementById('main-nav');
+
+      hamburgerButton.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+      });
+    });
+
+    const carouselInner = document.getElementById('carousel-inner');
+    const items = document.querySelectorAll('.carousel-item');
+    const indicators = document.querySelectorAll('.indicator-btn');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentIndex = 0;
+
+    function showSlide(index) {
+      indicators.forEach((indicator, i) => {
+        if (i === index) {
+          indicator.classList.add('active');
+          indicator.classList.add('bg-teal-700'); // Active indicator color
+          indicator.classList.remove('bg-gray-400');
+        } else {
+          indicator.classList.remove('active');
+          indicator.classList.remove('bg-teal-700');
+          indicator.classList.add('bg-gray-400');
+        }
+      });
+
+      carouselInner.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % items.length;
+      showSlide(currentIndex);
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      showSlide(currentIndex);
+    }
+
+    indicators.forEach(indicator => {
+      indicator.addEventListener('click', (e) => {
+        const slideTo = parseInt(e.target.dataset.slideTo);
+        currentIndex = slideTo;
+        showSlide(currentIndex);
+      });
+    });
+
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+
+    // Initialize the first slide
+    showSlide(currentIndex);
+
+    // Optional: Auto-advance carousel
+    // setInterval(nextSlide, 5000); // Change slide every 5 seconds
+  </script>
+</body>
+</html>

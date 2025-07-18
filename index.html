@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hawthorne Station - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for better aesthetics, applying Inter to the body */
+        body {
+            font-family: "Inter", sans-serif;
+            /* You might want to add a subtle background color here if your styles.css doesn't already */
+            background-color: #f0f7f4; /* From your CSS */
+        }
+        
+        /* Basic styling for the main content area to allow for sidebars */
+        .main-content-wrapper {
+            display: flex;
+            flex-direction: column; /* Stacks vertically on small screens */
+            padding: 1rem; /* Add some padding around the content */
+            max-width: 1200px; /* Limit overall content width */
+            margin: 2rem auto; /* Center the wrapper */
+        }
+        @media (min-width: 1024px) { /* Applies on large screens and up */
+            .main-content-wrapper {
+                flex-direction: row; /* Arranges horizontally on large screens */
+                justify-content: center; /* Centers the content */
+                align-items: flex-start; /* Aligns items to the top */
+                gap: 2rem; /* Space between columns */
+            }
+            .main-intro-section {
+                flex: 2; /* Takes up more space */
+                max-width: 60%; /* Limit width for better readability */
+            }
+            .side-panel-area {
+                flex: 1; /* Takes up less space */
+                max-width: 30%; /* Limit width */
+            }
+        }
+        /* Ensure the existing card styling is compatible or adjust */
+        .intro .card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 1.5rem;
+        }
+
+        
+        
+
+        /* Responsive adjustments for documents page */
+        @media (max-width: 768px) {
+            .documents-page-container h2.page-title {
+                font-size: 2.5rem;
+            }
+            .overview-section {
+                padding: 1.5rem;
+            }
+            .overview-section h3 {
+                font-size: 1.6rem;
+            }
+            .documents-list-section h3 {
+                font-size: 1.8rem;
+            }
+            .document-card {
+                flex-direction: row; /* Back to horizontal for smaller cards */
+                text-align: left;
+                align-items: flex-start;
+                padding: 15px;
+            }
+            .document-icon {
+                font-size: 2.5rem;
+                margin-right: 15px;
+                margin-bottom: 0;
+            }
+            .document-info h4 {
+                font-size: 1.15rem;
+            }
+            .document-info p {
+                font-size: 0.85rem;
+            }
+            .documents-page-nav button {
+                padding: 10px 18px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .documents-page-container h2.page-title {
+                font-size: 2rem;
+            }
+            .documents-page-nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .documents-page-nav button {
+                width: 100%;
+            }
+            .document-grid {
+                grid-template-columns: 1fr; /* Single column on very small screens */
+            }
+        }
+    </style>
+</head>
+<body class="home-page">
+    <header>
+        <div class="header-titles">
+            <h1>Hawthorne Station</h1>
+            <h2>Homeowner’s Association</h2>
+        </div>
+        <nav id="main-nav">
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="communication.html">HOA Communication</a>
+                <a href="community.html">Community Details</a>
+                <a href="blockwatch.html">Blockwatch</a>
+                <a href="documents.html">HOA Documents</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <button class="mobile-menu-button" id="mobile-menu-button" aria-label="Open navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero small-hero">
+        <div class="hero-content">
+            <div class="hero-background" style="background-image: url('images/community.jpg');"></div>
+            </div>
+    </section>
+
+    <div class="main-content-wrapper">
+        <section class="intro main-intro-section">
+            <h3>Welcome to Hawthorne Station!</h3>
+            <div class="card">
+                <p>
+                    Our community offers 73 beautiful homes just minutes from the Canyon Park Corridor, City of Mill Creek, and within easy commute of Seattle or the Eastside. We are located in the outstanding Northshore school district, within walking distance to Canyon Creek Elementary and Skyview Jr High.
+                </p>
+                <p>
+                    We encourage homeowners to explore our website, whether you are a current or future member of our community. There are opportunities to get involved as Board Members or assist with various special projects.
+                </p>
+                <p>
+                    For any questions about Hawthorne Station, please feel free to contact us by email at <a href="mailto:HOA@Hawthornestation.com">HOA@Hawthornestation.com</a>.
+                </p>
+                <p>Thank you,<br/>Hawthorne Station Homeowner’s Association</p>
+            </div>
+        </section>
+
+        <aside class="side-panel-area flex flex-col space-y-8 mt-8 lg:mt-0">
+            <div class="side-map-panel bg-white p-6 rounded-lg shadow-md border border-gray-200">
+                <div class="flex justify-between items-center mb-4">
+                    <h4 class="text-xl font-semibold text-gray-800">Our Location</h4>
+                    <button 
+                        id="toggleMapBtn" 
+                        class="text-sm text-blue-600 hover:underline focus:outline-none"
+                    >
+                        Hide Map
+                    </button>
+                </div>
+                
+                <div id="mapContainer" class="transition-all duration-300 ease-in-out overflow-hidden" style="max-height: 0; padding-top: 0;">
+                    <iframe 
+                        class="w-full h-[250px] rounded-md border-0" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10729.071854483863!2d-122.21323395!3d47.8541295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54900609315c1561%3A0x673c713b772c1c68!2sBothell%20East%2C%20Bothell%2C%20WA!5e0!3m2!1sen!2sus!4v1719974399999!5m2!1sen!2sus"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-xl w-full border border-gray-200">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Contact Us</h2>
+                <div class="space-y-4">
+                    <div class="flex items-center p-3 bg-gray-50 rounded-md shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-green-600 mr-3 flex-shrink-0">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+                        </svg>
+                        <div>
+                            <p class="text-sm font-medium text-gray-600">Email Address</p>
+                            <a href="mailto:HOA@hawthornestation.com" class="text-lg text-blue-600 hover:underline">HOA@hawthornestation.com</a>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center text-gray-600 mt-6 text-sm">
+                    For general inquiries, please reach out via email. We aim to respond within 24-48 hours.
+                </p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        © 2025 Hawthorne Station. All rights reserved.
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
